@@ -8,11 +8,18 @@ namespace CalculatorApp.Tests
         [Fact]
         public void Add_ShouldReturnSum()
         {
-            var calc = new Calculator();
+            Calculator calc = new Calculator();
 
-            int result = calc.Add(2, 3);
+            int result = calc.Add(6, 7);
 
-            Assert.Equal(5, result);
+            Assert.Equal(13, result);
+        }
+        [Fact]
+        public void Subtract_ReturnCorrectDifference()
+        {
+            Calculator calc = new Calculator();
+            int result = calc.Subtract(7, 6);
+            Assert.Equal(1, result);
         }
     }
 }
