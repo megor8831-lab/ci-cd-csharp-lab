@@ -2,9 +2,9 @@ name: .NET CI
 
 on:
   push:
-    branches: [ "master" ]      # ← ИСПРАВЛЕНО: master вместо main
+    branches: [ "master" ]
   pull_request:
-    branches: [ "master" ]      # ← ИСПРАВЛЕНО: master вместо main
+    branches: [ "master" ]
 
 jobs:
   build:
@@ -17,8 +17,8 @@ jobs:
       with:
         dotnet-version: '8.0.x'
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore CalculatorApp/CalculatorApp.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build CalculatorApp/CalculatorApp.sln --no-restore
     - name: Test
-      run: dotnet test
+      run: dotnet test CalculatorApp.Tests/CalculatorApp.Tests.csproj
